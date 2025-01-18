@@ -1,0 +1,178 @@
+:root {
+  --primary-blue: #1B3B6F;
+  --gold: #FFD700;
+  --light-blue: #B7D1F8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+  background: linear-gradient(to bottom, #001233, #001845);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 0%, transparent 80%, rgba(0,0,0,0.5) 100%);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.shrine-title {
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(255,215,0,0.5);
+  margin-bottom: 2rem;
+}
+
+.divine-light {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, rgba(255,215,0,0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.shrine-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.mary-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mary-figure {
+  width: 300px;
+  height: 450px;
+}
+
+.mary-robe {
+  fill: var(--primary-blue);
+  stroke: var(--gold);
+  stroke-width: 0.5;
+}
+
+.mary-face {
+  fill: #FFE5B4;
+}
+
+.mary-crown {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1;
+}
+
+.mary-halo {
+  stroke: var(--gold);
+  stroke-width: 0.5;
+  animation: halo-glow 3s infinite;
+}
+
+@keyframes halo-glow {
+  0%, 100% { stroke-opacity: 0.5; }
+  50% { stroke-opacity: 1; }
+}
+
+.information {
+  background: rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+h2 {
+  color: var(--gold);
+  margin-top: 2rem;
+}
+
+.mass-times {
+  list-style: none;
+  padding: 0;
+}
+
+.mass-times li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.mass-times li::before {
+  content: "✝";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.rosary {
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rosary-beads {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  border-top: 1px solid rgba(255,215,0,0.3);
+}
+
+.prayer {
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--light-blue);
+}
+
+@media (max-width: 768px) {
+  .shrine-content {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .mary-figure {
+    width: 200px;
+    height: 300px;
+  }
+}
